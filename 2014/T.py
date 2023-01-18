@@ -12,3 +12,17 @@ for _ in range(T):
             break
     else:
         print(-1)
+
+
+# alternative approach
+from functools import reduce
+from operator import eq
+for _ in range(T):
+    equation = input().split('=')
+    for i in range(10):
+        calculation = map(lambda s: eval(s.replace('?', str(i))), equation)
+        if reduce(eq, calculation):
+            print(i)
+            break
+    else:
+        print(-1)
