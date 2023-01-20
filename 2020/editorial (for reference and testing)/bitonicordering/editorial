@@ -1,0 +1,9 @@
+Note the values on the cards are unique. There is then a single smallest value card. That card must end up at either the beginning or end of the sequence. Once that value is at the end of the sequence, we can act as if it were removed from the sequence and continue to the next lowest card.
+
+If a card is at position $i$ (0-indexed) in the sequence, then it takes $\min(i, n - 1 - i)$ swaps to move it to one end. Thus we can process the cards in order of increasing value, find their index among the remaining cards, and add up the swaps for each card to get the answer.
+
+In order to run in time, the process of finding the index of a card in a sequence with deleted cards must be done efficiently. Actually removing an element from an array is O(n), which is too slow. Counting the remaining cards to the left ofa  query card naively is also O(n).
+
+One way to get around this issue is to create an auxiliary array `exists`, where `exists[i]` is $1$ if the element at index $i$ in the original sequence is still there and $0$ otherwise. Then to find the index of a card after some deletions, we need to be able to quickly sum up `exists[0]`, `exists[1]`, ..., `exists[i - 1]`. There are many data structures that can do element updates and prefix sums in $\mathcal{O}(\log n)$ time, such as Fenwick trees or segment trees.
+
+The overall runtime is $\mathcal{O}(n \log n)$.

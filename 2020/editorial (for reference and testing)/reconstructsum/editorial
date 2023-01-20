@@ -1,0 +1,4 @@
+Let the total sum be $S$. We can reconstruct the sum if and only if there is some element
+$x$ such that $x = \frac{S}{2}$, and this follows directly from noticing that if we partition
+the given collection of integers into two collections of equal sum, then they must each have sum
+$\frac{S}{2}$. Therefore, it suffices to compute $S$ and then check if $\frac{S}{2}$ is present.

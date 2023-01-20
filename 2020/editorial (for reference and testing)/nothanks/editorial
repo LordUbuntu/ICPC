@@ -1,0 +1,3 @@
+Keep a hash set of all the numbers in the input. This allows you to check in $\mathcal{O}(1)$ time if a number is in the input or not. Then for each number $x$ in the input, add it to the answer if $x - 1$ is not in the input.
+
+Runtime: $\mathcal{O}(n)$.

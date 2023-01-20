@@ -1,0 +1,15 @@
+The problem using XOR is a red herring, and the intended solution does not depend
+on excitement of a game being computed via XOR.
+
+With the exception of the strongest player, each player loses exactly one game.
+Therefore, we can match every loser to the player they lose to. This lets us
+model the tournament as a min-cost max-flow problem. Each player has two vertices
+associated with them, a "loser" vertex and a "winner" vertex. We connect each loser
+to a winner if a match between those two would result in the "winner" winning, with capacity
+1 and cost equal to the excitement of the game. Losers are connected to the source with
+capacity 1 and cost 0, and winners are connected to the sink with capacity $g-1$ and cost
+0, with the exception of the strongest player who cannot lose and is therefore connected
+to the sink with capacity $g$.
+
+The maximum variant can be solved in similar fashion by negating all the costs
+and then negating the final cost when running flow again.

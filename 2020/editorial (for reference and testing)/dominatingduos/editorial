@@ -1,0 +1,11 @@
+There are many different approaches to this problem:
+
+Approach 1:
+Let's suppose that we want the left person of the endpoint to be shorter than the right person of an endpoint (we can reverse the array to handle the other case). We can use a stack to process the people left to right. We'll maintain the invariant that the stack is in decreasing order. To process a person, first pop off from the top of the stack anyone that is shorter than the current person. Each of these pops contributes one valid interval. After, push the current person onto the stack. This is O(n) time.
+
+Approach 2:
+Look at the people, by decreasing height. Form the line in this order.
+We've started with the tallest person alone in the line.
+If the next person to join is not on the end, then they can form 2 Dominating Duos with the people on either side, since all subsequent people to be put in line are shorter.
+If they're past the end on either side of the existing line, then they can't form a DD on that side (they can only form 1 DD), and they become the new end.
+Thus, we can maintain the min/max indices of people who have joined the line, and increase the total by one everytime a person joins in the middle of this interval. This is O(n log n) time.

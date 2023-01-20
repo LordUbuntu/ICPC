@@ -1,0 +1,7 @@
+A set is valid if and only if the two smallest integers sum to an integer greater than the
+largest integer in the set.
+
+Therefore, we can brute force over the two smallest integers and the largest integer,
+and then every integer in between the second smallest integer and largest integer
+can be optionally included - if there are $K$ such integers and the set is valid,
+then we increment the answer by $2^K$.

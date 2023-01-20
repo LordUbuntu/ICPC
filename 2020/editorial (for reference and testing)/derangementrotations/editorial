@@ -1,0 +1,9 @@
+For a sequence s_i, let the j-th rotation be the new sequence s'_i = s_{(i+j)%n}.
+
+Given a permutation p, for each index i, there exists a unique j such that the j-th rotation makes s'_i = i. Let this be the function g(p, i) = j.
+
+It's easier to first ignore the condition that the original permutation is a derangement. Given that f(D) = n - 2, there are exactly two rotations that are not derangements. This means we can split the indices into two classes, A and B, where for those indices i in A, we have g(p, i) = a, and for indices j in B, we have g(p, j) = b, with a != b.
+
+WLOG, let a = 0 (e.g. we can shift everything by a to make this happen), then we want to know for a fixed b, how many permutations can exist. If we imagine a directed graph with n nodes, where node i points to node (i+b)%n, we want to count the number of distinct connected components. For each component, we can choose to either shift everything by b or not, for two choices per component. We also need to make sure we shift at least one class, so we can subtract one at the end. The number of ways to do this is 2^(gcd(n,b) - 1) - 1.
+
+We can iterate through b and sum up all the ways. To deal with the fact that the original permutation must also be a derangment, we can multiply by (n - 2) (since we know n-2 of the rotations will be derangments).

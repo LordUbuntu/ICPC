@@ -1,0 +1,12 @@
+We claim that it is possible to guess the operation correctly if and only if
+no letter appears twice or more. If a letter appears at least twice, then the
+audience member can swap them, but that looks the same as if the audience member
+did nothing.
+
+On the other hand, if no letter appears twice or more, then any swap will result
+in two cards changing positions.
+
+Thus, the problem reduces to seeing whether any letter appears more than once.
+Because there are only 26 letters, many approaches suffice, such as
+maintaining a frequency count with a dictionary or even looping over all 26 letters
+and counting the occurrences for each letter directly.

@@ -1,0 +1,8 @@
+Root the subtree arbitrarily, and for each node maintain f(x) = the number
+of subgraphs including the given node as the highest node with size of x.
+
+We claim that we can maintain f(0) through f(K) for every node here in a 
+total of O(N^2) time with code that looks very similar to polynomial multiplication.
+At first glance, it looks like this code should be O(N^3) but we can prove
+that it is O(N^2) because we can biject the nested loops to disjoint pairs
+of nodes in the tree, of which there are at most O(N^2) of.

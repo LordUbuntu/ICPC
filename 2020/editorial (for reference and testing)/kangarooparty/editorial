@@ -1,0 +1,4 @@
+$N$ is small, so we can brute force over all pairs of houses 
+and for each pair compute the energy expenditure. It takes $\mathcal{O}(N)$
+time to compute the energy expenditure for a given pair, and there are
+$\mathcal{O}(N^2)$ pairs, for a total runtime of $\mathcal{O}(N^3)$.

@@ -1,0 +1,4 @@
+Note that there are $2^k$ posible answer keys, since each question has two
+valid answer choices. It takes $\mathcal{O}(nk)$ time to compute the minimum
+score for a given answer key, so the naive brute force runs in $\mathcal{O}(2^k n k)$
+which is fast enough with the given bounds.

@@ -1,0 +1,10 @@
+Because there are only $9! = 362880$ different permutations of keys to consider,
+we can theoretically consider all of them. Naively, it takes linear time
+to compute the distance if we walk the string to type one character
+at a time. However, if we precompute for each pair of digits, how many
+adjacent pairs of characters match those two digits, then we can increment
+the candidate distance for a permutation by the product of the number
+of occurrences of that pair and the distance between those two digits
+in the permutation.
+
+This leads to a solution that is $\mathcal{O}(9! * 9^2 + |S|)$.

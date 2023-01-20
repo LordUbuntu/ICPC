@@ -1,0 +1,7 @@
+For a given pair of characters $i$ and $j$, connect $i$ and $j$ with a directed edge
+if and only if $i$ appears before $j$ in every input string.
+
+Note that a subsequence common to all strings corresponds to a path in the induced graph.
+The induced graph must be acyclic, so we have reduced this problem to computing
+the longest path in a directed acyclic graph, which can be done by running a topological
+sort on the graph and maintaining the length of the longest path ending at each node. 

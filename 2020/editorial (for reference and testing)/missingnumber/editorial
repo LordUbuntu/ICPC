@@ -1,0 +1,3 @@
+Iterate over the numbers from 1 to n, and keep track of where you are in the string. Depending on the count of digits in the current number, check if the next set of digits in the string match the expected number. If it does not, then output the current number.
+
+Runtime: $\mathcal{O}(n \log n)$.

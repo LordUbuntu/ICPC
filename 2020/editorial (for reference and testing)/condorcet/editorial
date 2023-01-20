@@ -1,0 +1,80 @@
+We want to calculate the minimum number of votes we need to add
+such that every individual is strictly outvoted by some other
+individual.  We start by reading in the input and accumulating
+head-to-head vote counts for every pair of individuals.
+
+Since the maximum number of individuals is only 5, we don't need a
+solution polynomial in k, so we consider enumerating all the different
+ways that such a situation can occur.  For instance, with k=4, we
+might have A is beaten by B, B is beaten by C, C is beaten by D,
+and D is beaten by B.  There are (k-1)^k such assignments, so at
+k=5 this is at most 1024, so we walk through all 1024 possibilities.
+We call each such possibility a configuration.  Not all configurations
+make sense (for instance, A cannot be beaten by B and also B be
+beaten by A; that is, there can be no loops of size 2) but it turns
+out we do not need to handle this case separately.
+
+An individual might be beaten by more than one other individual,
+but we focus on just one at a time, since that is sufficient.
+
+We can see this as a graph problem, with a directed graph with an
+edge between A and B if A is beaten by B.  Each node has outdegree
+exactly one.  We label each edge with a weight that the amount that
+the tail is beaten by the the head.
+
+Such a graph is called a functional graph, since its edges are
+defined by a function.  These graphs have at most one loop in each
+connected component, and all edges not in the loop are in a sequence
+that leads to that loop.  We can consider the individual components
+separately, since we have no requirements between the individuals
+in different components.
+
+We want to add votes such that the resulting weights of each edge
+in our configuration are positive.  The minimum number of votes we
+need to add, we refer to as the cost of the configuration.
+
+If the graphs did not have loops, the answer for each configuration
+would simply be one minus the minimum edge weight, and this provides
+a lower bound for the cost of the configuration; we cannot satisfy
+that edge (make it positive) without at least that many votes.
+
+But cycles introduce a wrinkle.  For each cycle, we can increase
+all but one of the edges in the cycle, but we must decrease one
+edge.  For instance, if we have a cycle with three edges among
+individuals A, B, and C, then the vote ABC increases the AB edge
+and the BC edge, but decreases the CA edge.  We want to allocate
+our votes around the cycle so the edges that we decrease are
+distributed appropriately so the entire cycle becomes positive.
+
+We can work out the details of how this is done without too much
+work but there are a lot of cases.  For instance, for a cycle of
+three with all weights 0, the number of votes required is 3.  We
+can also solve it using integer linear programming.  But it turns
+out we can simply use binary search on the answer with a routine
+that checks if a given number of votes suffices for that cycle.
+
+To check, we simply assume we have v votes, and we look at each
+edge of the cycle, which has weight w.  If w + v is less than or
+equal to zero, we can't possibly make that edge positive.  But if
+w + v is greater than zero, we can.  How many of the votes can we
+use that decrease, rather than increase, this edge?  If we use d
+such votes, then we need w + v - 2 * d > 0, so the maximum d would
+be floor((w + v - 1)/2).  This is the maximum number of votes that
+can invert this edge.
+
+Since each vote must invert an edge, we sum this value over all
+edges in the cycle; if the result is greater or equal to the given
+number of votes v, then v will work to satisfy the loop.
+
+Consider the case with the ABC cycle, and all weights zero.  If v
+<= 2 then floor((w+v-1)/2) is less than or equal to zero.  But if
+v = 3 then this value is 1, and adding this across all three edges
+is 3, which is greater or equal to v=3, so a vote of 3 works.
+
+There are a number of improvements that can be made.  When enumerating
+the configurations, eliminating any that introduces any weight
+greater than our best value so far, or that creates a loop of size
+two, can be skipped.  Instead of using binary search, you can use
+linear search starting at 1-m where m is the minimum edge weight
+for a cycle.  But the simple idea sketched above easily runs in
+time, so none of these improvements are necessary.

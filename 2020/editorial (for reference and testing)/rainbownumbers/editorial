@@ -1,0 +1,14 @@
+If we define $f(N)$ to be the number of rainbow numbers less than or equal to $R$,
+then the answer is $f(R) - f(L-1)$.
+
+To compute $f(N)$ in general, we can iterate over all possible digits for the most
+significant digit of our candidate rainbow number. If the most significant digit
+is less than the most significant digit of $N$, then there are $9$ choices for every subsequent digit,
+and if we precompute powers of nine, we can update our count in constant time. Otherwise,
+the most significant digits match, and we can remove the most significant digit and repeat this process,
+taking care to ensure that for future digits, we never use the most recently removed digit.
+
+There is an implementation detail where computing $L-1$ may be difficult without arbitrary-precision
+arithmetics, however $L$'s identity as a rainbow number can be computed directly.
+
+The overall runtime is therefore $\mathcal{O}(\log R)$.

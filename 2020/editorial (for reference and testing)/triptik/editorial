@@ -1,0 +1,31 @@
+The basic observation here is that because the coordinates are integers and
+viewports can only double or halve in size, there are only about 30N possible
+viewports, and each viewport can only be changed into at most K+2 other
+viewports.  This means that if we can efficiently traverse the graph of
+viewports and the operations that connect them, a BFS will give us the
+answer we need.
+
+The key to efficiently traversing the graph is to figure out which points are
+visible in a given viewport.  The naive approach is quadratic in N, which is
+prohibitively expensive.  One option is to sort the points and then perform
+a sweep for all viewports of a given size, tracking the sorted set of points
+in the viewport and extracting the top K for each viewport as we go.  Another
+option is to throw all the points into a segment tree and perform range queries
+where we merge top-K lists associated with each node in the tree.  The bounds
+for this problem are generous enough that either approach will run in time.
+
+There are a couple edge cases to watch out for:
+- The end condition is that the point of interest is both centered AND visible;
+  sometimes recentering the viewpoint on a particular point of interest can
+  cause it to no longer be visible, requiring that we zoom in further until it
+  is visible again.
+- In particular, it is occasionally necessary to zoom in *closer* than the
+  initial viewport.  Consider the following case:
+  2 1
+  1
+  2
+  We can recenter on the point at 1, but then the only visible point is 2, so
+  we zoom *in* once to the viewport [0.5, 1.5], at which point 1 is visible
+  again. Because we never have to zoom in further than that, it is convenient
+  to double all the point values so that we can still work entirely with
+  integers.

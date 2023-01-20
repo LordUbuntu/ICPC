@@ -1,0 +1,8 @@
+We can solve this with a DFS or BFS on a modified graph.
+
+Our vertices in the modified graph correspond to a triple of vertices in the original graph, representing the location of all the robots.
+Given a state, we can try to move some subset of robots along an edge to get to a new state. We can mark those edges as being traversable. The answer is possible if all edges that need to be colored are marked as traversable from our graph search.
+
+To see why this works, if an edge is marked as traversable, it is possible for the robots to color it correctly. This is because given any state, we can also get back to any previously visited state by reversing the moves that we took. If it is possible for the robots to color an edge, then it must have been marked as traversable, since there must be some sequence of legal moves that lets the robots color that edge, so our graph search will find a path to it.
+
+The time complexity of this solution is O(n^4) (there are n^3 different states, each of which takes at most O(n) time to expand). 

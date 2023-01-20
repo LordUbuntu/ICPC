@@ -1,0 +1,19 @@
+This is a twist on a classic DP problem, and it admits DP solutions.  After we
+convince ourselves that various greedy approaches do not work (can you find
+the counterexamples for "take largest" and "take smallest"?), we can try to
+find a recurrence that we can use.  The key is that unlike in the classic
+problem, where the order of objects does not matter, in this case we want to
+process them in sorted order, because that allows us to write a more nuanced
+recurrence.  If you look through the reference solutions, you will find
+multiple variations on the recurrence.  Here is one of them:
+
+Let dp[i][j] = -1 if it is not possible to achieve a total size of exactly j
+with some subset of the first i blocks, or c if the largest value for which it
+is possible to achieve a total size of exactly j with some subset of the first
+i blocks, including all blocks of size at most that value, is c.  We can then
+iterate over the final row of this DP table and check to see whether the
+smallest of the remaining blocks in each scenario can fit.  Like with the
+classic DP problem, this can be compressed into a single row with some care;
+doing so results in the solution in BadPacking_AN.java.
+
+You can peruse the other solutions for a variety of other formulations.

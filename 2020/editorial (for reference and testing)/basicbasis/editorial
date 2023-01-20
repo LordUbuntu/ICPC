@@ -1,0 +1,13 @@
+As the problem title suggests, we can start by building a basis out of the n given
+bitstrings. To do this, we can loop over each bitstring, tracking the already
+created basis of bitstrings. 
+To check if a new string can be added to the basis, loop over the strings in the basis
+one by one and XOR the current string with the one in the basis if the current string
+and the string in the basis both have the LSB of the basis string turned on.
+The current string can be added to the basis if and only if it is nonzero after looping over all such strings.
+Annotate each string with its original index.
+
+Now, to answer the given queries, we can just loop over the basis again and repeat the XOR process and loop
+for the first time the given string is zero.
+
+There is an edge case for zero - for this, you need to track the first vector that was not added to your basis.
