@@ -1,3 +1,5 @@
+# Solved by Jacobus, Yaacov, and Finian
+# Programmed by Jacobus
 # No Thanks!
 
 n = int(input())

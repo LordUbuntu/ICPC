@@ -1,3 +1,5 @@
+# Solved by Yaacov, Finian, and Jacobus
+# Programmed by Jacobus
 # rating problems
 
 n, k = map(int, input().split())
