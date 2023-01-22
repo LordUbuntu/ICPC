@@ -1,6 +1,9 @@
-# Solved by Jacobus, Yaacov, and Finian
-# Programmed by Jacobus
-# No Thanks!
+# Solved by: Jacobus, Yaacov, and Finian
+# Programmed by: Jacobus
+# Problem: No Thanks!
+# Solution:
+#   To find the score of the game we simply count every card number in
+#   the deck given that they aren't consecutive (increasing in order).
 
 n = int(input())
 nums = sorted([int(n) for n in input().split()])
