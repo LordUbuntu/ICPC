@@ -18,4 +18,17 @@
 #   ...
 #   1  => becomes 0 and 
 # Note:
-#   Still a work in progress...
+#   Still a work in progress... doesn't work for several cases yet
+def ramp(n):
+    # n is not a ramp number, go to next number down
+    if not all(d1 <= d2 for d1, d2 in zip(n[:len(n) - 1], n[1:])):
+        return ramp(n - 1) + 0
+    # n is 0, return 0
+    if n == 0:
+        return 0
+    # n is 1, return 1
+    if n == 1:
+        return 1
+    # n is a single digit, go to next number down
+    if len(str(n)) == 1:
+        return ramp(n - 1) + 0
