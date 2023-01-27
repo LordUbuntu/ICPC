@@ -1,0 +1,13 @@
+Case 1:
+The distance from Earth to Proxima is 5 parsecs.
+The distance from Earth to Barnards is 0 parsecs.
+The distance from Earth to Sirius is 0 parsecs.
+The distance from Proxima to Earth is 5 parsecs.
+The distance from Barnards to Earth is 5 parsecs.
+The distance from Sirius to Earth is 5 parsecs.
+Case 2:
+The distance from z2 to z1 is 17 parsecs.
+The distance from z1 to z2 is 0 parsecs.
+The distance from z1 to z3 is 10 parsecs.
+Case 3:
+The distance from Mars to Jupiter is 89894 parsecs.

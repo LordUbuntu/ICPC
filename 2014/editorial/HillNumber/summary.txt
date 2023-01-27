@@ -1,0 +1,2 @@
+Count the number of numbers with ascending then descending digits.
+Moderately difficult DP.  SER

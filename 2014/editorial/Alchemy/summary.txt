@@ -1,0 +1,2 @@
+Moderately complex tree DP (with a bit of geometry).  I don't
+have a complete handle on this one yet.  SER

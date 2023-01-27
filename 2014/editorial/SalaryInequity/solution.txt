@@ -1,0 +1,35 @@
+Slow Solution
+-------------
+
+The most straightforward solution is to do the following:
+
+In the event of a raise, automatically give everyone a raise.
+In the event of a query, compute the minimum and maximum salaries on demand.
+
+This will give us a linear-time update and a linear-time query, which will be
+too slow for our needs.
+
+Optimizations
+-------------
+
+One small optimization to note is that a raise does not necessarily need to
+be applied immediately. If you have a lot of raises happening at once, you can
+mark that you need to give out raises but not actually give them out until a
+query has to happen.
+
+Another one is to precompute the minimum and maximum salaries for employees, so
+that queries can take constant time instead of linear time.
+
+Full Solution
+-------------
+
+Instead of striving for a constant-time update or constant-time query, we will
+instead go for a logarithmic-time update and query.
+
+We start by reassigning IDs to all employees by doing a pre-order traversal of
+the tree. Note that for any employee, all of the IDs of that employee's
+subordinates form a contiguous interval.
+
+With this, we can now maintain all salaries in a range tree that supports
+range increment and min/max range query, both of which are operations that run
+in logarithmic time.

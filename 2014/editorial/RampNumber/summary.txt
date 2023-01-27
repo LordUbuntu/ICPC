@@ -1,0 +1,1 @@
+Count the number of numbers with only ascending digits.  Easy DP.

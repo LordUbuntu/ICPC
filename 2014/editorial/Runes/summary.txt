@@ -1,0 +1,1 @@
+Given a simple equation with one unknown digit, determine digit.  SER

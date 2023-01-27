@@ -1,0 +1,1 @@
+Given a small 2D bitmap, determine where it has been folded.  Brute force.  SER

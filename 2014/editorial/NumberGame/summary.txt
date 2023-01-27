@@ -1,0 +1,1 @@
+Game; can be divined by playing.  Linear algorithm possible; will accept DP.

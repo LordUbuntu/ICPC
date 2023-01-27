@@ -1,0 +1,1 @@
+Given fixed voting rules and ballots, decide who won.

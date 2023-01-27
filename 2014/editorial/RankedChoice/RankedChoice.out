@@ -1,0 +1,67 @@
+E
+A
+A
+B -> AC -> no winner
+ABC -> no winner
+EF -> D -> C -> B
+DE -> A -> BC -> no winner
+F -> D -> E -> H -> B -> C -> G
+B -> F -> C -> A -> H -> G -> E
+B -> E -> D -> G -> L -> C -> I -> H -> O -> M -> N -> F -> K -> J -> A
+F -> D -> E -> G -> K -> L -> A -> C -> H -> J -> B
+O -> H -> Q -> C -> M -> G -> F -> J -> B -> R -> N -> S -> I -> E -> D -> A -> L -> K
+D -> N -> I -> E -> H -> L -> KQ -> M -> O -> B -> F -> GJ -> P -> C
+J -> S -> GL -> M -> I -> B -> F -> H -> A -> C -> D -> N -> E -> P -> O -> Q -> R
+K -> F -> J -> H -> B -> N -> I -> M -> C -> E -> G -> L -> D
+J -> E -> O -> G -> Q -> N -> AD -> I -> K -> H -> F -> C -> L -> S -> P -> R -> M
+B -> D -> H -> F -> G -> I -> C -> A
+E -> C -> N -> J -> G -> L -> A -> B -> H -> M -> O -> I -> K -> P -> D
+J -> D -> H -> I -> B -> F -> E -> G -> A
+F -> H -> LQ -> A -> M -> J -> B -> R -> O -> P -> E -> K -> G -> C -> I -> D
+A -> C -> D -> J -> E -> L -> M -> F -> I -> H -> K -> B
+B -> F -> D -> A -> E -> G -> H
+EF -> A -> D -> C -> G -> B
+G -> AC -> I -> O -> H -> J -> MN -> B -> E -> L -> F -> D
+K -> M -> O -> G -> E -> F -> A -> IN -> J -> L -> C -> H -> D
+B -> M -> D -> I -> G -> L -> K -> A -> C -> Q -> J -> P -> O -> R -> F -> H -> N
+L -> M -> G -> J -> A -> O -> E -> C -> F -> K -> I -> N -> H -> B
+F -> LN -> B -> O -> M -> I -> J -> A -> G -> H -> K -> C -> D
+A -> D -> G -> E -> B -> K -> I -> F -> C -> H
+O -> Q -> M -> P -> D -> HR -> C -> BJ -> G -> L -> I -> F -> K -> E -> A
+AK -> F -> E -> I -> M -> C -> G -> Q -> O -> L -> B -> D -> T -> P -> H -> S -> R -> N
+F -> B -> E -> C -> G -> D -> H
+DH -> L -> M -> F -> B -> G -> C -> E -> I -> J -> A
+MR -> J -> H -> L -> G -> B -> Q -> O -> A -> N -> C -> I -> P -> E -> K -> F
+J -> F -> C -> K -> B -> H -> M -> I -> L -> A -> G -> D -> EN -> no winner
+G -> D -> C -> I -> K -> H -> J -> A -> L -> E -> F
+Q -> J -> B -> P -> E -> R -> GM -> C -> F -> H -> NO -> L -> K -> S -> D -> A
+J -> G -> P -> L -> B -> D -> E -> K -> M -> C -> H -> N -> O -> I -> A
+D -> J -> B -> FG -> C -> H -> A -> K -> I -> L
+E -> M -> L -> N -> I -> F -> C -> K -> D -> B -> H -> G -> J
+H -> K -> C -> G -> M -> A -> F -> E -> D -> I -> L -> J -> N
+E -> M -> F -> H -> N -> K -> O -> I -> J -> G -> L -> D -> B -> C
+H -> J -> C -> I -> G -> F -> E -> D -> B
+N -> G -> C -> A -> E -> I -> P -> S -> O -> B -> D -> F -> K -> R -> Q -> J -> M -> H
+J -> K -> L -> H -> B -> A -> C -> D -> G -> F -> E
+F -> E -> B -> N -> C -> K -> D -> L -> M -> J -> I -> H -> A -> G -> O
+A -> C -> B -> H -> E -> F -> D
+T -> S -> J -> E -> D -> BL -> F -> M -> P -> G -> H -> I -> Q -> N -> K -> A -> R -> O
+N -> D -> F -> M -> A -> G -> C -> E -> I -> H -> B -> J -> K
+FL -> G -> A -> J -> I -> H -> E -> O -> C -> K -> M -> N -> D
+E -> C -> J -> K -> I -> A -> D -> F -> G -> H
+A -> H -> F -> D -> G -> I -> C -> E
+P -> N -> O -> F -> L -> A -> E -> I -> C -> B -> J -> Q -> G -> M -> K -> H
+B -> H -> E -> D -> F -> G -> I -> C -> A -> L -> K
+D -> E -> O -> Q -> L -> C -> F -> K -> I -> H -> M -> G -> J -> N -> A -> P
+M -> Q -> I -> C -> H -> B -> K -> A -> J -> O -> F -> P -> G -> N -> L -> D
+BC -> O -> M -> L -> G -> A -> F -> I -> D -> H -> J -> E -> K
+C -> I -> F -> G -> B -> H -> D -> J -> A -> E
+I -> J -> F -> A -> H -> C -> B -> E -> G -> K
+Q -> R -> J -> L -> P -> E -> O -> B -> I -> D -> K -> F -> G -> A -> C -> N -> H
+E -> H -> R -> A -> P -> C -> F -> G -> M -> S -> O -> K -> T -> N -> I -> L -> D -> Q -> B
+B -> D -> F -> J -> E -> I -> H -> A -> G
+A -> F -> E -> I -> KM -> J -> L -> G -> B -> H -> D
+Q -> L -> BO -> P -> I -> E -> M -> A -> N -> C -> G -> K -> F -> J -> D
+P -> A -> L -> O -> K -> C -> D -> N -> G -> F -> R -> E -> S -> Q -> B -> J -> M -> H
+J -> F -> C -> A -> DL -> K -> G -> E -> I -> H
+G -> F -> H -> I -> E -> A -> D -> C -> K -> J

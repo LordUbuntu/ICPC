@@ -1,0 +1,399 @@
+10
+1
+earth 0 0 0
+0
+1
+earth earth
+3
+earth 0 0 0
+moon 0 10 0
+mars 0 30 0
+1
+mars moon
+4
+earth mars
+mars earth
+earth moon
+moon earth
+5
+mickey 0 0 0
+minney 0 10 0 
+goofy 0 0 10
+daffy 0 10 10
+donald 10 10 0
+2
+mickey donald
+donald mickey
+6
+mickey minney
+mickey goofy
+mickey mickey
+mickey daffy
+mickey donald
+donald mickey
+4
+earth 0 0 0
+sun 0 10 0
+moon 0 0 10
+mars 0 10 10
+1
+earth mars
+16
+earth earth
+earth sun
+earth moon
+earth mars
+sun earth
+sun sun
+sun moon
+sun mars
+moon earth
+moon sun
+moon moon
+moon mars
+mars earth
+mars sun
+mars moon
+mars mars
+9
+AA 0 0 0
+AB 0 10 0
+AC 0 20 0
+BA 10 0 0
+BB 10 10 0
+BC 10 20 0
+CA 20 0 0
+CB 20 10 0
+CC 20 20 0
+3
+AA BA
+BA BC
+BC CC
+8
+AA CC
+CC AA
+AC CA
+CA AC
+BB AB
+BB AA
+CB AB
+AB CB
+9
+dogX 5 0 0
+catX 10 0 0
+horseX 15 0 0
+dogY 0 2 0
+catY 0 4 0
+horseY 0 6 0
+dogZ 0 0 1
+catZ 0 0 2
+horseZ 0 0 3
+9
+horseX horseY
+horseY horseZ
+horseZ horseX
+catX catZ
+catZ catY
+catY catX
+dogX dogZ
+dogZ dogY
+dogY dogX
+20
+dogX catX
+dogX catY
+dogX catZ
+dogX dogX
+dogX dogY
+dogX dogZ
+dogX horseX
+dogX horseY
+dogX horseZ
+catX catX
+catX catY
+catX catZ
+catX dogX
+catX dogY
+catX dogZ
+catX horseX
+catX horseY
+catX horseZ
+horseX catX
+horseX catY
+13
+earth 0 0 0
+proxima 4 0 0
+barnards 0 6 0
+sirius 0 0 9
+ross 5 8 0
+procyon 0 11 0
+hd10700 0 10 6
+andromeda 1767766 1767766 0
+andromedaEarth 1767770 1767766 0
+andromedaRoss 1767775 1767766 5
+triangulum 1026060 1993389 1993389
+triangulumEarth 1026064 1993389 1993389
+triangulumRoss 1026060 1993390 1993390
+3
+sirius andromeda
+ross triangulum
+triangulumEarth hd10700
+20
+earth proxima
+earth barnards
+earth sirius
+earth ross
+earth procyon
+earth hd10700
+earth andromeda
+earth andromedaEarth
+earth triangulum
+earth triangulumEarth
+proxima earth
+barnards earth
+sirius earth
+ross earth
+procyon earth
+hd10700 earth
+andromeda earth
+andromedaEarth earth
+triangulum earth
+triangulumEarth earth
+25
+AA 0 0 0
+AB 0 10 0
+AC 0 20 0
+AD 0 30 0
+AE 0 40 0
+BA 10 0 0
+BB 10 10 0
+BC 10 20 0
+BD 10 30 0
+BE 10 40 0
+CA 20 0 0
+CB 20 10 0
+CC 20 20 0
+CD 20 30 0
+CE 20 40 0
+DA 30 0 0
+DB 30 10 0
+DC 30 20 0
+DD 30 30 0
+DE 30 40 0
+EA 40 0 0
+EB 40 10 0
+EC 40 20 0
+ED 40 30 0
+EE 40 40 0
+4
+CD AA
+CD AE
+CD EA
+CD EE
+20
+DC AC
+AC DC
+AB CB
+CB AB
+BA ED
+ED BA
+EC AA
+AA EC
+DB EB
+EB DB
+EB DD
+DD EB
+BE CC
+CC BE
+CC AD
+AD CC
+AE BB
+BB AE
+AE DC
+EE AA
+60
+Seahawks 5 0 0
+Browns 10 0 0
+Cardinals 15 0 0
+Chargers 20 0 0
+Chiefs 25 0 0
+Cowboys 30 0 0
+Dolphins 35 0 0
+Eagles 40 0 0
+Falcons 45 0 0
+FourtyNiners 50 0 0
+Giants 55 0 0
+Lions 60 0 0
+Packers 65 0 0
+Panthers 70 0 0
+Patriots 75 0 0
+Raiders 80 0 0
+Rams 85 0 0
+Saints 90 0 0
+Broncos 95 0 0
+Steelers 100 0 0
+Seahawks1 0 2 0
+Browns2 0 4 0
+Cardinals3 0 6 0
+Chargers4 0 8 0
+Chiefs5 0 10 0
+Cowboys6 0 12 0
+Dolphins7 0 14 0
+Eagles8 0 16 0
+Falcons9 0 18 0
+FourtyNiners10 0 20 0
+Giants11 0 22 0
+Lions12 0 24 0
+Packers13 0 26 0
+Panthers14 0 28 0
+Patriots15 0 30 0
+Raiders16 0 32 0
+Rams17 0 34 0
+Saints18 0 36 0
+Broncos19 0 38 0
+Steelers20 0 40 0
+SeahawksA 0 0 1
+BrownsB 0 0 2
+CardinalsC 0 0 3
+ChargersD 0 0 4
+ChiefsE 0 0 5
+CowboysF 0 0 6
+DolphinsG 0 0 7
+EaglesH 0 0 8
+FalconsI 0 0 9
+FourtyNinersJ 0 0 10
+GiantsK 0 0 11
+LionsL 0 0 12
+PackersM 0 0 13
+PanthersN 0 0 14
+PatriotsO 0 0 15
+RaidersP 0 0 16
+RamsQ 0 0 17
+SaintsR 0 0 18
+BroncosS 0 0 19
+SteelersT 0 0 20
+30
+Seahawks Seahawks1
+Browns2 SeahawksA
+BrownsB Browns
+Cardinals Cardinals3
+Chargers4 CardinalsC
+ChargersD Chargers
+Chiefs Chiefs5
+Cowboys6 ChiefsE
+CowboysF Cowboys
+Dolphins Dolphins7
+Eagles8 DolphinsG
+EaglesH Eagles
+Falcons Falcons9
+FourtyNiners10 FalconsI
+FourtyNinersJ FourtyNiners
+Giants Giants11
+Lions12 GiantsK
+LionsL Lions
+Packers Packers13
+Panthers14 PackersM
+PanthersN Panthers
+Patriots Patriots15
+Raiders16 PatriotsO
+RaidersP Raiders
+Rams Rams17
+Saints18 RamsQ
+SaintsR Saints
+Broncos Broncos19
+Steelers20 BroncosS
+SteelersT Steelers
+20
+Seahawks Steelers
+Browns Broncos
+Cardinals Saints
+Chargers Rams
+Chiefs Raiders
+Cowboys Patriots
+Dolphins Panthers
+Eagles Packers
+Falcons Lions
+FourtyNiners Giants
+Giants FourtyNiners
+Lions Falcons
+Packers Eagles
+Panthers Dolphins
+Patriots Cowboys
+Raiders Chiefs
+Rams Chargers
+Saints Cardinals
+Broncos Browns
+Steelers Seahawks
+60
+a 0 0 0
+b 1 0 0
+c 2 0 0
+d 3 0 0
+e 4 0 0
+f 5 0 0
+g 6 0 0
+h 7 0 0
+i 8 0 0
+j 9 0 0
+k 10 0 0
+l 11 0 0
+m 12 0 0
+n 13 0 0
+o 14 0 0
+p 15 0 0
+q 16 0 0
+r 17 0 0
+s 18 0 0
+t 19 0 0
+u 20 0 0
+v 21 0 0
+w 22 0 0
+x 23 0 0
+y 24 0 0
+z 25 0 0
+a1 26 0 0
+b1 27 0 0
+c1 28 0 0
+d1 29 0 0
+e1 30 0 0
+f1 31 0 0
+g1 32 0 0
+h1 33 0 0
+i1 34 0 0
+j1 35 0 0
+k1 36 0 0
+l1 37 0 0
+m1 38 0 0
+n1 39 0 0
+o1 40 0 0
+p1 41 0 0
+q1 42 0 0
+r1 43 0 0
+s1 44 0 0
+t1 45 0 0
+u1 46 0 0
+v1 47 0 0
+w1 48 0 0
+x1 49 0 0
+y1 50 0 0
+z1 51 0 0
+A1 52 0 0
+B1 53 0 0
+C1 54 0 0
+D1 55 0 0
+E1 56 0 0
+F1 57 0 0
+G1 58 0 0
+H1 59 0 0
+4
+b b1
+b B1
+b1 b
+B1 b
+7
+a z
+a1 z
+A1 z
+z a
+z a1
+z A1
+t1 d1

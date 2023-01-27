@@ -1,0 +1,32 @@
+3
+4
+Earth 0 0 0
+Proxima 5 0 0
+Barnards 5 5 0
+Sirius 0 5 0
+2
+Earth Barnards
+Barnards Sirius
+6
+Earth Proxima
+Earth Barnards
+Earth Sirius
+Proxima Earth
+Barnards Earth
+Sirius Earth
+3
+z1 0 0 0
+z2 10 10 10
+z3 10 0 0
+1
+z1 z2
+3
+z2 z1
+z1 z2
+z1 z3
+2
+Mars 12345 98765 87654
+Jupiter 45678 65432 11111
+0
+1
+Mars Jupiter

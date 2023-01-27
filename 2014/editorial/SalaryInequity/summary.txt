@@ -1,0 +1,2 @@
+Given a company where bosses can give all their subordinates raises, efficiently
+determine for any employee the range of salaries among all his/her subordinates.

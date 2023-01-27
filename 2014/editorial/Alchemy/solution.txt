@@ -1,0 +1,224 @@
+
+Introduction
+------------
+
+In this problem you are given some nested circles. When drawing a circle it
+originally is red. When a circle is drawn all circles within its area turn the
+opposite color. You get a reward or penalty for each circle when it changes
+state. Determine a permutation to draw the circles that maximizes reward
+but comes first lexicographically.
+
+Observations
+------------
+
+This problem yields itself to analysing it's cases. The tricky part is to not
+get caught up in case by case analysis when coding a solution. It's very easy
+to try and code a solution that handles all cases explicitly but then misses
+a special case. Coding the solution in a more general way can reduce bugs and
+make this problem much more pleasant to solve.
+
+The first observation is that the nested circles form a forest of trees. The problem
+statement itself could even be modified for the input to be a tree but I found it
+much easier to explain the problem elegantly in terms of circles. Building the
+tree from the circles in N^2 time is easy.
+
+Another observation is that it is always possible to get a score of zero.
+Simply draw the roots, then each of its children and so on in a bfs or dfs order.
+
+Imagine for a minute that for all circles A=B. For this simplied version we
+can make the following observations:
+   1. If A is positive then we want it to change state as much as possible.
+      Simply put draw this node before all of it's ancestors.
+   2. If A is negative then we want to change state never.
+      Draw this type of node after all of it's ancestors.
+   3. If A is zero then it doesn't matter when the state changes!
+
+The next observation is that it is very easy to rework the scoring. Instead of
+accruing reward for it's decendants when a circle is drawn, give the reward based
+on the number of ancestors in the tree left to draw. The cost function is easier
+to deal with in this kind of thinking. Notice which circles that are left to draw
+doesn't matter. The only thing that matters is the sum of circles left.
+
+Notice that any permutation is possible. This fact is important because that means
+that any combination of parents left to draw after a circle is drawn is also 
+possible.
+
+This simplifies the problem down considerably. We know that each node has K 
+ancestors. We need to find a number for each node in the interval [0, K]
+that maximizes the reward. This number is the number of ancestors left to draw.
+This can be done with simple iteration in N^2 time after precomputing the
+number of parents for each circle. Precomputing the parent count can be done 
+with DFS.
+
+The answer for the reward is simply the maximum of all the nodes reward functions.
+Finding the maximum answer is easy. Recovering the permutation is the tricky
+part of this problem.
+
+There are two types of nodes that are interesting to consider. The ones that are
+cyclic and acyclic. Cyclic nodes occur when A+B=0. For these nodes reach their 
+maximum every turn (A=0 B=0) or on an alternating time step (A=5 B=-5), (A=-1 B=1).
+It is very easy to determine the cycle.
+
+For the acyclic nodes their maximum occurs in either the first two changes or
+the last two changes. In other words the optimal value V occurs when
+V=0, V=1, V=K-1, or V=K. When A+B is positive the max change happens at
+K-1 or K. When A+B is negative the max change happens at 0 or 1. (depending on
+if A is positive)
+
+In other words it is easy to compute maximum reward in linear time.
+
+O(N^2 log N) solution
+---------------------
+
+The solution to this problem is somewhat similar to incremental topological
+sort for recovering a lexicographically first solution. There are two important
+differences however. The first is that candidate nodes for the next number
+in the permutation make be removed from being candidate nodes in the next
+iteration. This property occurs in cyclic nodes. The second difference is that
+when a node reaches its last possible V value then it must be draw before
+any of it's ancestors.
+
+The algorithm to recover the lexicographically first permutation is simple:
+
+while (hasNodesLeft()):
+   findNode():
+      find node that is at a maximum V value, comes lexicographically first by 
+      label and doesn't have ancestors on their last maximum V value.
+   remove node from active nodes
+   add node to permutation
+
+Just implement find node correctly in O(N log N). 
+
+To make things easier on ourselves we can do a dfs on the forest to obtain
+the preorder and postorder timings of each node. This is a very common trick
+and will enable us to quickly determine if one node is an ancestor of another.
+Simply a node is an ancestor if its preorder number is in the interval 
+[pre,post] of another node.
+
+Now finding the node can be done in two steps:
+1. Step through the nodes in label order.
+      Find all nodes that that maximize V value in the current state.
+      if the node is on it's last V value then place it's preorder number
+         in a TreeSet called special (or multiset in c++).
+2. Step through candidate nodes in label order.
+      call special.higher(preorder[curNode]) or its c++ equivalent.
+      This will get the first preorder number strictly higher than the
+      current node's preorder number.
+      if special.higher(preorder[curNode]) > postorder[curNode]
+         return curNode
+
+Now you have a simple solution for this problem if N=5000
+
+O(N log N) solution
+-------------------
+
+I've been playing around with the idea of an O(N log N) solution to this problem
+for quite a while. I don't have a definite solution to the problem yet but here 
+I will gives some of the ideas I came up with to try and solve the problem for
+the bounds when N=10^5. These ideas can potentially be morphed into an extra
+separate problem (I have some ideas or different problems with this bound and
+will list them here) or this problem made into an extra hard version with N=10^5 
+bounds if the judge crew is smarter than me and can fill in the holes. :)
+
+First thing that can happen is the forest of trees can be reconstructed in
+O(N log N) time. This can be done with a sweep. Sweep from left to right
+when the sweep line enters the start of a circle add the top and bottom of
+the curve to a binary tree data structure. (easy to do with treeset or multiset)
+The value of the curve changes when the sweepline moves but the relative
+positioning of the curves remains invariant. When a circle is first reached we 
+can cast a line upward from the top of curve. This is done with TreeSet.higher.
+Notice we will hit no curve, the bottom of a curve or a top of a curve.
+Keep track for each node the node that it hit and which side of the curve that
+was hit.
+
+At the end of the sweep we have a data structure that looks something like this:
+
+                   o
+                  /
+                 /
+                /
+               /
+              /
+             o-------o------o
+                    / \
+                   /   \
+                  o     o
+
+The edges either point to the parent of the tree (what we want) or one of the
+siblings. If the ray cast hit the bottom of a curve the edge is a sibling edge
+and if it hit the top of a curve we are nested inside the circle. 
+
+Then to recover the real tree do the following:
+
+loop through each node:
+   walk sibling pointers until a sibling with a parent is reached.
+      when a node is reached put it on a stack
+      when updating sibling pointers pull them off the stack and
+      update their parent pointer
+
+The cost of doing this is amortized O(N) since a parent pointer is only
+updated once and the search stops once a parent is reached. This is somewhat
+similar to path compression in union find.
+
+Now we have a tree that looks something like this:
+
+                   o
+                  /|\
+                 / | \
+                /  |  \
+               /   |   \
+              /    |    \
+             o     o     o
+                  / \
+                 /   \
+                o     o
+
+We can work with this data structure.
+
+*---------------------*
+| Alternative problem |
+*---------------------*
+
+I'm going to take a side bar here and talk about an alternative problem that
+can be giving for N=10^5 using this idea. This can be used if the judging crew
+wanted to fork off this idea into a separate problem. 
+
+Given the nested circles and an ordering that they are draw. Determine for each
+circle at the time it is draw the number of circles it is nested in and the
+number of circles contained in it's area.
+
+This can be done by constructing the tree from the nested circles and then using
+two binary indexed trees (fenwick trees) to update and calculate the desired values.
+
+The problem uses the same preorder postorder trick described above and the updates
+happen on those fenwick trees.
+
+This problem is uninteresting as it does not require observations or taking
+advantage of special properties of the problem to solve. But if there weren't
+many submissions for problems this year it can make a decent "filler" problem.
+
+The story can be something based on empires on earth and how certain ones were
+formed of previous empires or something. Feel free to modify this idea in any
+way to make a more interesting problem.
+
+-----------------------
+
+Now back to solving the original problem "Alchemy". We already know that for each
+node the V values for each node can be calculated in linear time. We just need
+a way to speed up findNode to O(log N). 
+
+Using the preorder postorder trick this problem can be changed to work on intervals.
+In the interval form of the problem we can easily update all nodes in a given range.
+It would be very easy to activate and deactivate cyclic nodes every timestep.
+In each node simply keep the two minimum labels in the data structure flip the
+min labels when updating a change of state for a subtree. You can use
+interval trees, treaps or splay trees to implement this idea. The tricky part
+is satisfying the second condition. We need some way to only poll nodes that
+do not have a node in their subtree on their last valid V value. This is a way
+to get a suboptimal solution. I think there is a way to still modify the data
+structure to handle this property but I have yet to figure it out.
+
+I recommend looking down this path for a solution if the set looks too easy. This
+version could become an interesting hard problem if the judges can figure it out.
+
+Good Luck! :D

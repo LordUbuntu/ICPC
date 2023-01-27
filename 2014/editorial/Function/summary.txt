@@ -1,0 +1,2 @@
+Given a recursively-defined function on a discrete domain,
+evaluate it for specific points.
