@@ -1,4 +1,7 @@
 # grid problem
+# the nature of a grid makes a natural representation of a graph, we don't
+# need to convert it to a graph representation.
+# more info: https://www.youtube.com/watch?v=KiCBXu4P-2Y
 
 
 # collect input and construct grid from it
