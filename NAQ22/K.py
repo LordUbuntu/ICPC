@@ -24,3 +24,40 @@ for op1, op2 in product(ops, ops):
     if min_val == 0:
         break
 print(int(min_val))
+
+
+
+
+
+# An alternative but equivalent approach taken by Finian
+def finian():
+    a, b, c = map(int, input().split())
+    answers = []
+    answers.append(eval(f"({a}+{b})+{c}"))
+    answers.append(eval(f"({a}+{b})-{c}"))
+    answers.append(eval(f"({a}+{b})*{c}"))
+
+    answers.append(eval(f"({a}-{b})+{c}"))
+    answers.append(eval(f"({a}-{b})-{c}"))
+    answers.append(eval(f"({a}-{b})*{c}"))
+
+    answers.append(eval(f"({a}*{b})+{c}"))
+    answers.append(eval(f"({a}*{b})-{c}"))
+    answers.append(eval(f"({a}*{b})*{c}"))
+
+    if a % b == 0:
+        answers.append(eval(f"({a}/{b})+{c}"))
+        answers.append(eval(f"({a}/{b})-{c}"))
+        answers.append(eval(f"({a}/{b})*{c}"))
+
+    if (a+b) % c == 0:
+        answers.append(eval(f"({a}+{b})/{c}"))
+    if (a-b) % c == 0:
+        answers.append(eval(f"({a}-{b})/{c}"))
+    if (a*b) % c == 0:
+        answers.append(eval(f"({a}*{b})/{c}"))
+
+    if (a % b == 0) and (a / b) % c == 0:
+        answers.append(eval(f"({a}/{b})/{c}"))
+
+    print(int(min(filter(lambda x: x >= 0, answers))))
