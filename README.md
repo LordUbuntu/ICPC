@@ -15,6 +15,17 @@ We won [7th place](http://www.acmicpc-pacnw.org/scoreboard/2022/group10.html) in
 
 
 
+## 2023 NAQ
+
+On Feb 4, 2023 we competed in the North American Qualifier hosted by ICPC ([as seen on kattis](https://naq22.kattis.com/contests/naq22/standings?filter=4651)). Me and my friends competed together as the team "Neural Notwork" representing TWU. The team consisted of:
+
+* [Yaacov Kochatkov](https://github.com/yaacovkdev) :question:
+* [Finian Lugtigheid](https://github.com/DaSpikeyBos) :owl:
+* [Jacobus Burger](https://github.com/LordUbuntu) :snake:
+
+To see our solutions, go to the [NAQ22](https://github.com/LordUbuntu/ICPC/tree/main/NAQ22) directory!
+
+
 ## 2023 D2
 
 This year will be my second go at ICPC, but this time in person at UBC as is more ICPC tradition! Our team tentatively has the name "Neural Notwork". The team will consist of:
