@@ -18,9 +18,9 @@ We won [7th place](http://www.acmicpc-pacnw.org/scoreboard/2022/group10.html) in
 ## 2023 D2
 
 This year will be my second go at ICPC, but this time in person at UBC as is more ICPC tradition! Our team tentatively has the name "Neural Notwork". The team will consist of:
-* [Yaacov Kochatkov](https://github.com/yaacovkdev)
-* [Finian Lugtigheid](https://github.com/DaSpikeyBos)
-* [Jacobus Burger](https://github.com/LordUbuntu)
+* [Yaacov Kochatkov](https://github.com/yaacovkdev) :question:
+* [Finian Lugtigheid](https://github.com/DaSpikeyBos) :owl:
+* [Jacobus Burger](https://github.com/LordUbuntu) :snake:
 
 We will be competing in person on UBC campus February 25.
 
