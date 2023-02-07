@@ -1,6 +1,8 @@
+# Problem K - Smallest Caclulated Value
+
+
 # Jacobus Burger (2023)
-# My solution to this problem (very straight-forward)
-# Poblem K - Smallest Caclulated Value
+# My solution to this problem. Brute force (16 cases)
 from itertools import product
 
 
