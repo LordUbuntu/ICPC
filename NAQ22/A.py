@@ -1,6 +1,4 @@
 # Problem A - Beast Bullies
-# Explaination:
-#   TODO
 n = int(input())
 animals = sorted([int(input()) for i in range(n)])
 attackers = n-1

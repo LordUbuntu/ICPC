@@ -5,7 +5,6 @@
 # My solution to this problem. Brute force (16 cases)
 from itertools import product
 
-
 a, b, c = map(int, input().split())
 ops = ['+', '-', '*', '/']
 min_val = (1000**3)
