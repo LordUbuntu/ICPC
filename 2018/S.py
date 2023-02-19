@@ -1,4 +1,4 @@
-# greedy cashiers problem
+# greedy scheduler problem
 from heapq import heappop as pop
 from heapq import heappush as push
 from heapq import heapify
